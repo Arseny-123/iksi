@@ -51,15 +51,10 @@ body {
     z-index: 100;
     flex-shrink: 0;
 }
-.home-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 20px;
-}
+
 /* SVG Логотип */
 .logo-img {
-    height: 75px;
+    height: 175px;
     display: flex;
     align-items: center;
     justify-content: center;
