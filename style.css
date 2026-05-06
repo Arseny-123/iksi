@@ -51,19 +51,27 @@ body {
     z-index: 100;
     flex-shrink: 0;
 }
-
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+}
 /* SVG Логотип */
 .logo-img {
     height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1;
 }
 
 .logo-img img {
     height: 100%;
     width: auto;
+    max-width: 150px;
     object-fit: contain;
+    display: block;
 }
 
 .icon-btn {
@@ -92,6 +100,7 @@ body {
     border-radius: 50%;
     background: #22C55E;
     box-shadow: 0 0 8px #22C55E;
+    flex-shrink: 0;
 }
 
 /* Кнопка записи */
