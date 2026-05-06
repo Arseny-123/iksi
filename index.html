@@ -13,15 +13,16 @@
         <div class="screen active" id="screen-home">
             <!-- Верхняя панель главного экрана -->
 <header class="top-bar home-header">
-    <div style="width: 24px;"></div>
+    <!-- Пусто слева -->
+    <div style="width: 24px; flex-shrink: 0;"></div>
     
+    <!-- Логотип по центру -->
     <div class="logo-img">
-        <img src="logo.png" alt="ИксИ">
+        <img src="logo.png" alt="ИксИ" onerror="this.style.display='none'">
     </div>
-    <div class="status-indicator online"></div>
-</header>
     
-    <div class="status-indicator online"></div>
+    <!-- Индикатор справа -->
+    <div class="status-indicator online" style="flex-shrink: 0;"></div>
 </header>
 
             <section class="record-section">
