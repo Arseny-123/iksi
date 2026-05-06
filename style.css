@@ -54,8 +54,8 @@ body {
 
 /* SVG Логотип */
 .logo-svg {
-    width: 100px;
-    height: 50px;
+    width: 110px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,8 +124,8 @@ body {
 
 /* SVG Микрофон */
 .mic-svg {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
 }
 
 .record-hint {
