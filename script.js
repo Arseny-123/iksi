@@ -40,9 +40,6 @@ document.querySelectorAll('.map-card.selectable').forEach(card => {
     });
 });
 
-// === ВЫБОР ФОРМАТА — НИЧЕГО НЕ ПРОИСХОДИТ ===
-// Убран обработчик клика на format-option
-
 // === ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ МЫШЬЮ ===
 const scrollContainer = document.querySelector('.cards-scroll');
 if (scrollContainer) {
