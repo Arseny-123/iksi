@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>ИксИ — Транскрибация лекций</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- === ГЛАВНЫЙ ЭКРАН === -->
+        <div class="screen active" id="screen-home">
+            <header class="top-bar">
+                <button class="icon-btn">⚙️</button>
+                <h1 class="logo-text">ИксИ</h1>
+                <div class="status-indicator online"></div>
+            </header>
+
+            <section class="record-section">
+                <button class="record-btn">
+                    <span class="mic-icon">🎙️</span>
+                </button>
+                <p class="record-hint">Нажмите для записи лекции или совещания</p>
+                <p class="record-subhint">Если нет интернета, запись сохранится в черновик</p>
+            </section>
+
+            <section class="recent-section">
+                <h2>Последние записи</h2>
+                <div class="cards-scroll">
+                    <div class="card">
+                        <div class="card-title">Лекция 12.04</div>
+                        <div class="card-meta">45 мин <span class="status done">✅</span></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Совещание без интернета</div>
+                        <div class="card-meta">30 мин <span class="status draft">⏳</span></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Семинар по физике</div>
+                        <div class="card-meta">60 мин <span class="status done">✅</span></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Консультация</div>
+                        <div class="card-meta">15 мин <span class="status processing">🌐</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="preview-section">
+                <h2>Текущая расшифровка</h2>
+                <div class="preview-box">
+                    <p>— Здравствуйте, сегодня мы рассмотрим тему квантовой механики...</p>
+                    <p>— Основное уравнение Шрёдингера описывает...</p>
+                    <div class="mini-map">🧠</div>
+                </div>
+                <button class="open-full">Открыть полностью →</button>
+            </section>
+        </div>
+
+        <!-- === ЭКРАН КАРТЫ === -->
+        <div class="screen" id="screen-maps">
+            <header class="top-bar">
+                <button class="icon-btn back-btn">←</button>
+                <h1 class="logo-text">Карты</h1>
+                <div style="width: 24px;"></div>
+            </header>
+
+            <section class="maps-section">
+                <h2>Выберите запись</h2>
+                <p class="maps-hint">Тапните на запись, чтобы выбрать формат отображения</p>
+
+                <div class="map-card selectable" data-title="Лекция 12.04">
+                    <div class="map-info-row">
+                        <div class="map-title">Лекция 12.04</div>
+                        <div class="map-status ready">✅ Готово</div>
+                    </div>
+                    <div class="map-date">12 апреля 2026 · 45 мин</div>
+                </div>
+
+                <div class="map-card selectable" data-title="Совещание без интернета">
+                    <div class="map-info-row">
+                        <div class="map-title">Совещание без интернета</div>
+                        <div class="map-status ready">✅ Готово</div>
+                    </div>
+                    <div class="map-date">10 апреля 2026 · 30 мин</div>
+                </div>
+
+                <div class="map-card selectable" data-title="Семинар по физике">
+                    <div class="map-info-row">
+                        <div class="map-title">Семинар по физике</div>
+                        <div class="map-status ready">✅ Готово</div>
+                    </div>
+                    <div class="map-date">8 апреля 2026 · 60 мин</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- === ЭКРАН ВЫБОРА ФОРМАТА === -->
+        <div class="screen" id="screen-format">
+            <header class="top-bar">
+                <button class="icon-btn format-back">←</button>
+                <h1 class="logo-text" id="format-title">Формат</h1>
+                <div style="width: 24px;"></div>
+            </header>
+
+            <section class="format-section">
+                <h2>Выберите формат отображения</h2>
+
+                <div class="format-option" data-format="table">
+                    <div class="format-icon">📊</div>
+                    <div class="format-info">
+                        <div class="format-name">Таблица</div>
+                        <div class="format-desc">Структурированные данные в виде таблицы</div>
+                    </div>
+                </div>
+
+                <div class="format-option" data-format="mindmap">
+                    <div class="format-icon">🧠</div>
+                    <div class="format-info">
+                        <div class="format-name">Ментальная карта</div>
+                        <div class="format-desc">Визуальная схема связей и идей</div>
+                    </div>
+                </div>
+
+                <div class="format-option" data-format="text">
+                    <div class="format-icon">📝</div>
+                    <div class="format-info">
+                        <div class="format-name">Просто текст</div>
+                        <div class="format-desc">Обычный текст расшифровки</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- === ЭКРАН РЕЗУЛЬТАТА === -->
+        <div class="screen" id="screen-result">
+            <header class="top-bar">
+                <button class="icon-btn result-back">←</button>
+                <h1 class="logo-text" id="result-title">Результат</h1>
+                <div style="width: 24px;"></div>
+            </header>
+
+            <section class="result-section" id="result-content">
+                <!-- Контент подставляется JS -->
+            </section>
+        </div>
+
+        <!-- === ЭКРАН ПОДПИСКИ === -->
+        <div class="screen" id="screen-subscribe">
+            <header class="top-bar">
+                <div style="width: 24px;"></div>
+                <h1 class="logo-text">Подписки</h1>
+                <div style="width: 24px;"></div>
+            </header>
+
+            <section class="subscribe-section">
+                <div class="current-plan">
+                    <div class="plan-badge">Бесплатно</div>
+                    <div class="plan-name">Текущий тариф</div>
+                </div>
+
+                <div class="plans-list">
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <div class="plan-title">Бесплатный</div>
+                            <div class="plan-price">0 ₽</div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>✓ 5 записей в месяц</li>
+                            <li>✓ Базовая расшифровка</li>
+                            <li>✓ 1 ментальная карта</li>
+                            <li>✗ Экспорт</li>
+                        </ul>
+                        <button class="plan-btn active">Текущий</button>
+                    </div>
+
+                    <div class="plan-card popular">
+                        <div class="popular-badge">Популярное</div>
+                        <div class="plan-header">
+                            <div class="plan-title">Про</div>
+                            <div class="plan-price">299 ₽/мес</div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>✓ Безлимитные записи</li>
+                            <li>✓ Расшифровка + AI</li>
+                            <li>✓ Безлимит карты</li>
+                            <li>✓ Экспорт PDF, DOCX</li>
+                        </ul>
+                        <button class="plan-btn">Выбрать</button>
+                    </div>
+
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <div class="plan-title">Команда</div>
+                            <div class="plan-price">999 ₽/мес</div>
+                        </div>
+                        <ul class="plan-features">
+                            <li>✓ Всё из Про</li>
+                            <li>✓ 5 участников</li>
+                            <li>✓ Общая библиотека</li>
+                            <li>✓ API доступ</li>
+                        </ul>
+                        <button class="plan-btn">Выбрать</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- === ЭКРАН ПРОФИЛЬ === -->
+        <div class="screen" id="screen-profile">
+            <header class="top-bar">
+                <div style="width: 24px;"></div>
+                <h1 class="logo-text">Профиль</h1>
+                <div style="width: 24px;"></div>
+            </header>
+
+            <section class="profile-section">
+                <div class="profile-avatar">👤</div>
+                <div class="profile-name">Пользователь</div>
+                <div class="profile-plan">Бесплатный тариф</div>
+
+                <div class="stats-row">
+                    <div class="stat">
+                        <div class="stat-num">12</div>
+                        <div class="stat-label">Записей</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">8</div>
+                        <div class="stat-label">Карт</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">5ч</div>
+                        <div class="stat-label">Аудио</div>
+                    </div>
+                </div>
+
+                <div class="menu-list">
+                    <div class="menu-item">
+                        <span class="menu-icon">💾</span>
+                        <span class="menu-text">Экспорт записей</span>
+                        <span class="menu-arrow">→</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-icon">🔔</span>
+                        <span class="menu-text">Уведомления</span>
+                        <span class="menu-arrow">→</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-icon">🌐</span>
+                        <span class="menu-text">Язык</span>
+                        <span class="menu-value">Русский</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-icon">❓</span>
+                        <span class="menu-text">Помощь</span>
+                        <span class="menu-arrow">→</span>
+                    </div>
+                </div>
+
+                <button class="logout-btn">Выйти</button>
+            </section>
+        </div>
+
+        <!-- === НИЖНЯЯ НАВИГАЦИЯ === -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-screen="screen-home">
+                <span>📋</span>
+                <label>Записи</label>
+            </button>
+            <button class="nav-item" data-screen="screen-maps">
+                <span>🧠</span>
+                <label>Карты</label>
+            </button>
+            <button class="nav-item" data-screen="screen-subscribe">
+                <span>⚡</span>
+                <label>Подписки</label>
+            </button>
+            <button class="nav-item" data-screen="screen-profile">
+                <span>👤</span>
+                <label>Профиль</label>
+            </button>
+        </nav>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
