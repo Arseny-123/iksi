@@ -27,6 +27,7 @@ body {
     padding-bottom: 80px;
     overflow-y: auto;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
 }
 
 .screen::-webkit-scrollbar {
@@ -51,6 +52,20 @@ body {
     flex-shrink: 0;
 }
 
+/* SVG Логотип */
+.logo-svg {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-svg svg {
+    width: 100%;
+    height: 100%;
+}
+
 .icon-btn {
     background: none;
     border: none;
@@ -60,7 +75,7 @@ body {
     color: #FFFFFF;
 }
 
-.back-btn, .format-back, .result-back {
+.back-btn, .format-back {
     font-size: 20px;
 }
 
@@ -107,9 +122,10 @@ body {
     transform: scale(0.95);
 }
 
-.mic-icon {
-    font-size: 48px;
-    filter: brightness(0) invert(1);
+/* SVG Микрофон */
+.mic-svg {
+    width: 48px;
+    height: 48px;
 }
 
 .record-hint {
@@ -185,46 +201,6 @@ body {
 
 .status {
     font-size: 16px;
-}
-
-/* Превью расшифровки */
-.preview-section {
-    padding: 0 20px;
-    flex-shrink: 0;
-}
-
-.preview-box {
-    background: #1E293B;
-    border-radius: 16px;
-    padding: 16px;
-    border: 1px solid rgba(0, 229, 255, 0.1);
-    position: relative;
-    min-height: 100px;
-}
-
-.preview-box p {
-    font-size: 14px;
-    color: #CBD5E1;
-    line-height: 1.5;
-    margin-bottom: 4px;
-}
-
-.mini-map {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    font-size: 24px;
-    opacity: 0.6;
-}
-
-.open-full {
-    margin-top: 12px;
-    background: none;
-    border: none;
-    color: #00E5FF;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 0;
 }
 
 /* === ЭКРАН КАРТЫ === */
@@ -303,13 +279,6 @@ body {
     padding: 20px;
     margin-bottom: 12px;
     border: 1px solid rgba(0, 229, 255, 0.1);
-    cursor: pointer;
-    transition: transform 0.2s, border-color 0.2s;
-}
-
-.format-option:active {
-    transform: scale(0.98);
-    border-color: #00E5FF;
 }
 
 .format-icon {
@@ -330,76 +299,6 @@ body {
 .format-desc {
     font-size: 13px;
     color: #94A3B8;
-}
-
-/* === ЭКРАН РЕЗУЛЬТАТА === */
-.result-section {
-    padding: 0 20px;
-    flex: 1;
-}
-
-.result-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #1E293B;
-    border-radius: 16px;
-    overflow: hidden;
-}
-
-.result-table th,
-.result-table td {
-    padding: 12px 16px;
-    text-align: left;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-size: 14px;
-}
-
-.result-table th {
-    background: rgba(0, 229, 255, 0.1);
-    color: #00E5FF;
-    font-weight: 600;
-}
-
-.result-table td {
-    color: #CBD5E1;
-}
-
-.result-mindmap {
-    background: #0F172A;
-    border-radius: 16px;
-    padding: 30px;
-    min-height: 300px;
-    position: relative;
-}
-
-.result-mindmap .node {
-    position: absolute;
-    padding: 10px 16px;
-    border-radius: 24px;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.result-mindmap .node.center {
-    background: #9333EA;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.result-mindmap .node.branch {
-    background: #1E293B;
-    border: 2px solid #00E5FF;
-    color: #00E5FF;
-}
-
-.result-text {
-    background: #1E293B;
-    border-radius: 16px;
-    padding: 20px;
-    line-height: 1.8;
-    font-size: 15px;
-    color: #CBD5E1;
 }
 
 /* === ЭКРАН ПОДПИСКИ === */
@@ -514,6 +413,11 @@ body {
     color: #0A192F;
 }
 
+/* Отступ снизу для подписок */
+.bottom-spacer {
+    height: 100px;
+}
+
 /* === ЭКРАН ПРОФИЛЬ === */
 .profile-section {
     padding: 20px;
@@ -613,18 +517,6 @@ body {
 .menu-value {
     color: #94A3B8;
     font-size: 14px;
-}
-
-.logout-btn {
-    margin-top: 24px;
-    background: rgba(239, 68, 68, 0.15);
-    border: 1px solid rgba(239, 68, 68, 0.3);
-    color: #EF4444;
-    padding: 14px 40px;
-    border-radius: 12px;
-    font-size: 15px;
-    cursor: pointer;
-    width: 100%;
 }
 
 /* === НИЖНЯЯ НАВИГАЦИЯ === */
