@@ -57,14 +57,12 @@ body {
     height: 75px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex: 1;
+    justify-content: flex-start;
 }
 
 .logo-img img {
     height: 100%;
     width: auto;
-    max-width: 150px;
     object-fit: contain;
     display: block;
 }
