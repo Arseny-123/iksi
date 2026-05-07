@@ -59,7 +59,7 @@ body {
 }
 /* SVG Логотип */
 .logo-img {
-    height: 90px;        /* ← Крупный логотип */
+    height: 120px;        /* ← Крупный логотип */
     width: auto;
     display: block;
 }
