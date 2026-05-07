@@ -54,7 +54,7 @@ body {
 
 /* SVG Логотип */
 .logo-img {
-    height: 250px;
+    height: 75px;
     display: flex;
     align-items: center;
     justify-content: center;
