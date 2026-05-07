@@ -51,18 +51,23 @@ body {
     z-index: 100;
     flex-shrink: 0;
 }
-
+.home-header {
+    display: flex;
+    justify-content: flex-start;  /* ← Логотип влево */
+    align-items: center;
+    padding: 16px 20px;
+}
 /* SVG Логотип */
 .logo-img {
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 90px;        /* ← Крупный логотип */
+    width: auto;
+    display: block;
 }
 
 .logo-img img {
     height: 100%;
     width: auto;
+    max-width: none;     /* ← Без ограничений */
     object-fit: contain;
     display: block;
 }
